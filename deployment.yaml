@@ -8,6 +8,9 @@ spec:
     metadata:
       labels:
         name: node-micro
+        kube-monkey/enabled: enabled
+        kube-monkey/identifier: node-micro
+        kube-monkey/mtbf: '1'
     spec:
       containers:
       - name: node-micro
