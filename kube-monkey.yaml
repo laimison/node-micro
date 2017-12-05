@@ -15,7 +15,7 @@ spec:
            command:
              - "/kube-monkey"
            args: ["-v=5", "-log_dir=/var/log/kube-monkey"]
-           image: kube-monkey:v0.1.0
+           image: gcr.io/loadmill-142315/kube-monkey:1.0
            volumeMounts:
              - name: config-volume
                mountPath: "/etc/kube-monkey"
