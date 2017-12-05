@@ -18,6 +18,7 @@
   "homepage": "https://github.com/idoco/node-micro#readme",
   "dependencies": {
     "express": "^4.16.2",
-    "express-loadmill": "0.0.6"
+    "express-loadmill": "0.0.6",
+    "geoip-lite": "^1.2.1"
   }
 }
