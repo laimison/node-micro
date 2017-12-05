@@ -14,5 +14,5 @@ spec:
     spec:
       containers:
       - name: kubernetes-pod-chaos-monkey
-        image: jnewland/kubernetes-pod-chaos-monkey
+        image: gcr.io/loadmill-142315/kube-chaos-monkey:1.0
         imagePullPolicy: Always
