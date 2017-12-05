@@ -13,12 +13,12 @@ app.get('/', (req, res) => {
             req.socket.remoteAddress ||
             req.connection.socket.remoteAddress;
 
-        console.log("IP is ",ip);
+        console.log("IP is ",geoip.pretty(ip));
         const location = geoip.lookup(ip);
-        console.log("Location is ", location.ll);
-
+        console.log("Location is ", location);
         res.send(location);
     } catch (e) {
+        console.log("error: ", e);
         res.status(500).end();
     }
 });
