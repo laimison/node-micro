@@ -12,10 +12,10 @@ app.get('/', (req, res) => {
             req.connection.remoteAddress ||
             req.socket.remoteAddress ||
             req.connection.socket.remoteAddress;
+
         console.log(req.headers['x-forwarded-for']);
         console.log(req.connection.remoteAddress);
         console.log(req.socket.remoteAddress);
-        console.log(req.connection.socket.remoteAddress);
 
         console.log("IP is ",geoip.pretty(ip));
         const location = geoip.lookup(ip);
