@@ -8,23 +8,18 @@ app.use(Loadmill({verifyToken: process.env.LOADMILL_VERIFY_TOKEN}));
 app.get('/', (req, res) => {
     try {
 
-        const ip = req.headers['x-forwarded-for'] ||
-            req.connection.remoteAddress ||
-            req.socket.remoteAddress ||
-            req.connection.socket.remoteAddress;
-
-        console.log(req.headers['x-forwarded-for']);
-        console.log(req.connection.remoteAddress);
-        console.log(req.socket.remoteAddress);
-
+        let ip = req.headers['x-forwarded-for'] || "";
+        ip = ip.split(",")[0];
         console.log("IP is ",geoip.pretty(ip));
+
         const location = geoip.lookup(ip);
         console.log("Location is ", location);
         res.send(location);
+
     } catch (e) {
         console.log("error: ", e);
         res.status(500).end();
     }
 });
 
-app.listen(80, () => console.log('Example app listening on port 3000!'));
+app.listen(80, () => console.log('Example app listening on port 80!'));
