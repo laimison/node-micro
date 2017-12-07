@@ -18,7 +18,7 @@ spec:
         image: gcr.io/loadmill-142315/node-micro:1.4
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 3000
+        - containerPort: 80
         env:
         - name: LOADMILL_VERIFY_TOKEN
           value: replace-me
