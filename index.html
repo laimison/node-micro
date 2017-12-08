@@ -41,7 +41,7 @@
 
         .main {
             max-width: 600px;
-            margin: 4em auto;
+            margin: 2em auto;
             padding: 50px;
             background-color: #fff;
             border-radius: 1em;
@@ -104,13 +104,12 @@
                     lng = data.ll[1];
                 } else {
                     console.error('location not found');
-                    data.ll = [0,0]
                 }
 
                 document.getElementById('ip').textContent = data.ip;
                 document.getElementById('country').textContent = data.country;
                 document.getElementById('city').textContent = data.city;
-                document.getElementById('ll').textContent = data.ll[0] + "," + data.ll[1];
+                document.getElementById('ll').textContent = lat + "," + lng;
 
                 map = new google.maps.Map(document.getElementById('map'), {
                     center: {lat: lat, lng: lng},
