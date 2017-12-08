@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: node-micro
-        image: gcr.io/loadmill-142315/node-micro:1.7
+        image: gcr.io/loadmill-142315/node-micro:1.8
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
