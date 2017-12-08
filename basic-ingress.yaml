@@ -5,4 +5,4 @@ metadata:
 spec:
   backend:
     serviceName: node-micro
-    servicePort: 80
+    servicePort: 3000

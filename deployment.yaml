@@ -12,10 +12,10 @@ spec:
     spec:
       containers:
       - name: node-micro
-        image: gcr.io/loadmill-142315/node-micro:1.8
+        image: gcr.io/loadmill-142315/node-micro:2.0
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 80
+        - containerPort: 3000
         env:
         - name: LOADMILL_VERIFY_TOKEN
           value: replace-me
