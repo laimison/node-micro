@@ -13,19 +13,42 @@
             background-color: #f0f0f2;
             margin: 10px;
             padding: 0;
+            text-rendering: optimizeLegibility;
+            font-size: 1rem;
             font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        table {
+            width: 100%;
+            text-align: left;
+            color: #4a4a4a;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        tr:first-child {
+            border-top: none;
+        }
+
+        tr {
+            border-top: 1px solid #ddd;
+        }
+
+        td, th {
+            line-height: 1.5;
+            padding: 10px 5px;
         }
 
         .main {
             max-width: 600px;
-            margin: 5em auto;
+            margin: 4em auto;
             padding: 50px;
             background-color: #fff;
             border-radius: 1em;
         }
 
         #map {
-            height: 400px;
+            height: 30vh;
         }
     </style>
 
@@ -35,7 +58,35 @@
 <div class="main">
     <h1>IP Location Demo</h1>
 
-    <div id="map"></div>
+    <p>
+        <div id="map"></div>
+    </p>
+
+    <table>
+        <tbody>
+        <tr>
+            <td>Your IP</td>
+            <td id="ip">111</td>
+        </tr>
+
+        <tr>
+            <td>Country</td>
+            <td id="country">222</td>
+        </tr>
+
+        <tr>
+            <td>City</td>
+            <td id="city">333</td>
+        </tr>
+
+
+        <tr>
+            <td>Latitude/Longitude</td>
+            <td id="ll">444</td>
+        </tr>
+
+        </tbody>
+    </table>
 
 </div>
 
@@ -53,7 +104,13 @@
                     lng = data.ll[1];
                 } else {
                     console.error('location not found');
+                    data.ll = [0,0]
                 }
+
+                document.getElementById('ip').textContent = data.ip;
+                document.getElementById('country').textContent = data.country;
+                document.getElementById('city').textContent = data.city;
+                document.getElementById('ll').textContent = data.ll[0] + "," + data.ll[1];
 
                 map = new google.maps.Map(document.getElementById('map'), {
                     center: {lat: lat, lng: lng},

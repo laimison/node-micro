@@ -10,9 +10,10 @@ app.get('/location', (req, res) => {
     try {
 
         let ip = req.headers['x-forwarded-for'] || "";
-        ip = ip.split(",")[0];
+        ip = ip.split(",")[0] || "0.0.0.0";
 
-        const location = geoip.lookup(ip);
+        const location = geoip.lookup(ip) || {};
+        location.ip = ip;
         console.log("Location is ", location);
         res.setHeader('Content-Type', 'application/json');
         res.send(JSON.stringify(location));
