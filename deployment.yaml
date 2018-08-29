@@ -18,4 +18,4 @@ spec:
         - containerPort: 3000
         env:
         - name: LOADMILL_VERIFY_TOKEN
-          value: replace-me
+          value: f037b345c4c820e59a25ace38fc0b3a1
