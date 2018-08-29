@@ -6,6 +6,7 @@ WORKDIR /usr/src/app
 # Install app dependencies
 COPY package.json package.json 
 
+RUN apk update && apk add bash
 RUN npm install
 # If you are building your code for production
 # RUN npm install --only=production
